@@ -1,0 +1,53 @@
+{{ define "body" }}
+  <section class="hero is-fullheight">
+    <div class="hero-body">
+      <div class="container">
+        <div class="site-image has-text-centered">
+          <img src="/uploads/site-image.png"
+               alt="{{ .Site.Params.name }}"/>
+        </div>
+
+        <nav class="panel">
+          {{ range .Site.Params.links }}
+            <a href="{{ .url | safeURL }}" class="panel-block"
+               {{ with .label }}title="{{ . }}"{{ end }}
+
+               {{ if eq .external true }}
+                 target="_blank"
+                 rel="noopener noreferrer"
+               {{ end }}>
+
+              <span class="panel-icon">
+                <i aria-hidden="true">
+                  {{ readFile .icon | safeHTML }}
+                </i>
+              </span>
+
+              {{ .text | default .url }}
+            </a>
+          {{ end }}
+        </nav>
+
+        <footer class="footer has-text-centered">
+          <div>
+            Powered by
+            <a href="https://gohugo.io">Hugo</a>,
+            <a href="https://bulma.io">Bulma</a>,
+            <a href="https://fontawesome.com">FontAwesome</a>,
+            <a href="https://netlify.com/">Netlify</a>
+          </div>
+
+          <div class="copyright">
+            Copyright &copy; {{ .Site.Params.copyright }}
+          </div>
+
+          <div class="devs">
+            <a target="_blank" rel="noopener noreferrer"
+               href="https://ntrrg.dev">@ntrrg</a>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </section>
+{{ end }}
+

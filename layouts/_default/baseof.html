@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="{{ .Site.Language | default "en" }}">
+<head>
+  {{ if ne hugo.Environment "development" }}
+    {{ with .Site.Params.googleTagManager }}
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','{{ . }}');</script>
+    {{ end }}
+  {{ end }}
+
+  <meta charset="utf-8"/>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+
+  {{ range .AlternativeOutputFormats }}
+    <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}"
+          href="{{ .Permalink | safeURL }}"/>
+  {{ end }}
+
+  {{ block "head-metadata" . }}
+    {{ partial "metadata.tmpl" . }}
+    {{ partial "app.tmpl" . }}
+    {{ hugo.Generator }}
+  {{ end }}
+
+  {{ with .Site.Params.interledger }}
+    <meta name="monetization" content="{{ . }}">
+  {{ end }}
+
+  <title>
+    {{ $.Param "title" }}
+    {{ .Site.Params.titleSeparator }}
+    {{ .Site.Params.name }}
+  </title>
+
+  {{ .Scratch.Set "cssSrc" "sass/main.scss" }}
+  {{ .Scratch.Set "cssOutput" "css/main.css" }}
+  {{ $sheet := partial "build-css.tmpl" . }}
+  <link rel="stylesheet" type="text/css" href="{{ $sheet.Permalink }}"/>
+
+  {{ .Scratch.Set "jsSrc" "js/main.js" }}
+  {{ $script := partial "build-js.tmpl" . }}
+  <script defer src="{{ $script.Permalink }}"></script>
+</head>
+<body>
+  {{ if ne hugo.Environment "development" }}
+    {{ with .Site.Params.googleTagManager }}
+      <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id={{ . }}"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+      </noscript>
+    {{ end }}
+  {{ end }}
+
+  {{ block "body" . }}{{ end }}
+  {{ partial "privacy.tmpl" . }}
+</body>
+</html>
+

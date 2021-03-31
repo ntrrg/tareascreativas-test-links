@@ -1,0 +1,21 @@
+{
+  "name": "tareascreativas-links",
+  "version": "0.1.0",
+  "description": "Landing page with hot links.",
+  "main": "",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tareascreativas/links.git"
+  },
+  "author": "Tareas Creativas <info@tareascreativas.com> (https://tareascreativas.com)",
+  "license": "CC-BY-4.0",
+  "bugs": {
+    "url": "https://github.com/tareascreativas/links/issues"
+  },
+  "homepage": "https://links.tareascreativas.com",
+  "dependencies": {
+    "bulma": "^0.9.1"
+  },
+  "devDependencies": {}
+}

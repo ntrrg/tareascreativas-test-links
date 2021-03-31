@@ -1,0 +1,138 @@
+baseURL: https://tareascreativas-test-links.netlify.app/
+title: Tareas Creativas
+params:
+  name: Tareas Creativas
+  titleSeparator: "-"
+  copyright: Tareas Creativas 2021
+  author:
+    type: Organization
+    name: Tareas Creativas
+    email: info@tareascreativas.com
+    website: https://tareascreativas.com/
+  image: /favicon-512x512.png
+  ampImage: /icon-206x60.png
+  #googleTagManager: GTM-XXXXXXX
+  #disqus: tareascreativas-links
+  interledger: "$ilp.uphold.com/YM4XLxrdPh44"
+defaultContentLanguage: es
+defaultContentLanguageInSubdir: true
+languages:
+  es:
+    languageName: Español
+    params:
+      title: Enlaces
+      description: Si estás buscando información acerca de Tareas Creativas, este es el lugar indicado.
+      links:
+        - label: Sitio web
+          text: tareascreativas.com
+          url: https://tareascreativas.com/es/
+          icon: /static/uploads/fa-globe.svg
+        - label: Instagram
+          text: "@tareascreativas"
+          url: https://instagram.com/tareascreativas/
+          icon: /static/uploads/fa-instagram.svg
+          external: true
+        - label: Facebook
+          text: Tareas Creativas
+          url: https://www.facebook.com/tareascreativas/
+          icon: /static/uploads/fa-facebook.svg
+          external: true
+        - label: Telegram
+          text: Tareas Creativas
+          url: https://t.me/tareascreativas
+          icon: /static/uploads/fa-telegram.svg
+          external: true
+        - label: Whatsapp
+          text: Tareas Creativas
+          url: https://wa.me/584247456041
+          icon: /static/uploads/fa-whatsapp.svg
+          external: true
+        - label: Correo electrónico
+          text: info@tareascreativas.com
+          url: mailto://info@tareascreativas.com
+          icon: /static/uploads/fa-envelope.svg
+        - label: Teléfono
+          text: +XX XXX XXXXXXX
+          url: tel://+XXXXXXXXXXXX
+          icon: /static/uploads/fa-phone-square.svg
+  en:
+    languageName: English
+    params:
+      title: Links
+      description: If your are looking for Tareas Creativas, you are in the right place.
+      links:
+        - label: Website
+          text: tareascreativas.com
+          url: https://tareascreativas.com/en/
+          icon: /static/uploads/fa-globe.svg
+        - label: Instagram
+          text: "@tareascreativas"
+          url: https://instagram.com/tareascreativas/
+          icon: /static/uploads/fa-instagram.svg
+          external: true
+        - label: Facebook
+          text: Tareas Creativas
+          url: https://www.facebook.com/tareascreativas/
+          icon: /static/uploads/fa-facebook.svg
+          external: true
+        - label: Telegram
+          text: Tareas Creativas
+          url: https://t.me/tareascreativas
+          icon: /static/uploads/fa-telegram.svg
+          external: true
+        - label: Whatsapp
+          text: Tareas Creativas
+          url: https://wa.me/584247456041
+          icon: /static/uploads/fa-whatsapp.svg
+          external: true
+        - label: Email
+          text: info@tareascreativas.com
+          url: mailto://info@tareascreativas.com
+          icon: /static/uploads/fa-envelope.svg
+        - label: Phone
+          text: +XX XXX XXXXXXX
+          url: tel://+XXXXXXXXXXXX
+          icon: /static/uploads/fa-phone-square.svg
+taxonomies: []
+theme: []
+enableEmoji: true
+markup:
+  highlight:
+    codeFences: true
+    hl_Lines: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: false
+    tabWidth: 2
+  tableOfContents:
+    startLevel: 1
+    endLevel: 6
+  goldmark:
+    attribute:
+      block: true
+      title: true
+    renderer:
+      unsafe: true
+enableRobotsTXT: true
+ignoreErrors: 
+  - error-remote-getjson
+enableGitInfo: true
+minify: true
+server:
+  headers:
+    - for: /**
+      values:
+        Cache-Control: no-cache, no-store
+        X-Content-Type-Options: nosniff
+        Referrer-Policy: strict-origin-when-cross-origin
+    - for: /**/
+      values:
+        X-XSS-Protection: 1; mode=block
+    - for: /*.html
+      values:
+        X-XSS-Protection: 1; mode=block
+    - for: /*.webmanifest
+      values:
+        Content-Type: application/manifest+json; charset=utf-8
+

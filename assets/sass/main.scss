@@ -1,0 +1,84 @@
+@charset "utf-8";
+
+$body-family: sans-serif;
+$body-background-color: #fff;
+$body-size: 20px;
+
+@import "bulma/sass/utilities/_all.sass";
+@import "bulma/sass/base/_all.sass";
+@import "bulma/sass/layout/hero.sass";
+@import "bulma/sass/elements/container.sass";
+
+// Site image
+
+.site-image {
+  margin-bottom: 1em;
+}
+
+.site-image img {
+  width: 15em;
+  max-width: 80vw;
+}
+
+// Links
+
+$panel-radius: 0px;
+$panel-item-border: 0.25em solid $border-light;
+$panel-block-color: #fff;
+$panel-icon-color: $panel-block-color;
+
+@import "bulma/sass/components/panel.sass";
+@import "bulma/sass/helpers/typography.sass";
+
+.panel {
+  max-width: 50ex;
+
+  background-color: #00b6bf;
+  color: $panel-block-color;
+
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.panel-block {
+  word-break: break-word;
+}
+
+a.panel-block:hover .panel-icon,
+label.panel-block:hover .panel-icon {
+  color: $panel-block-active-color;
+}
+
+.panel-icon {
+  font-size: 1em;
+}
+
+/* Footer */
+
+.footer {
+  font-size: 0.5em;
+  opacity: 0.7;
+  padding: 1em;
+}
+
+.footer a {
+  color: $body-color;
+  text-decoration: underline;
+}
+
+/* Privacy alert */
+
+@import "bulma/sass/elements/other.sass";
+@import "bulma/sass/components/message.sass";
+@import "bulma/sass/helpers/other.sass";
+
+.privacy-alert {
+  width: 100%;
+
+  margin-bottom: 0em !important;
+
+  position: fixed;
+  left: 0%;
+  bottom: 0%;
+}
+
