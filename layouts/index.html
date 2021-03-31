@@ -8,10 +8,9 @@
         </div>
 
         <nav class="panel">
-          {{ range .Site.Params.links }}
+          {{ range .Params.links }}
             <a href="{{ .url | safeURL }}" class="panel-block"
                {{ with .color }}style="background-color: {{ . }};"{{ end }}
-               {{ with .label }}title="{{ . }}"{{ end }}
 
                {{ if eq .external true }}
                  target="_blank"
@@ -29,7 +28,7 @@
         </nav>
 
         <nav class="social-buttons">
-          {{ range .Site.Params.social }}
+          {{ range .Params.social }}
             <a href="{{ .url | safeURL }}" class="social-button"
                target="_blank" rel="noopener noreferrer"
                {{ with .label }}title="{{ . }}"{{ end }}>
