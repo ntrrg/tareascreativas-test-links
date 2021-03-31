@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 $body-family: sans-serif;
-$body-background-color: #fff;
+$body-background-color: #000;
 $body-size: 20px;
 
 @import "bulma/sass/utilities/_all.sass";
@@ -16,16 +16,16 @@ $body-size: 20px;
 }
 
 .site-image img {
-  width: 15em;
+  width: 10em;
   max-width: 80vw;
 }
 
 // Links
 
-$panel-radius: 0px;
-$panel-item-border: 0.25em solid $border-light;
+$panel-radius: 0.25em;
 $panel-block-color: #fff;
 $panel-icon-color: $panel-block-color;
+$panel-item-border: none;
 
 @import "bulma/sass/components/panel.sass";
 @import "bulma/sass/helpers/typography.sass";
@@ -33,7 +33,6 @@ $panel-icon-color: $panel-block-color;
 .panel {
   max-width: 50ex;
 
-  background-color: #00b6bf;
   color: $panel-block-color;
 
   margin-right: auto;
@@ -41,7 +40,10 @@ $panel-icon-color: $panel-block-color;
 }
 
 .panel-block {
+  border-radius: 0.25em;
   word-break: break-word;
+
+  margin-bottom: $panel-radius;
 }
 
 a.panel-block:hover .panel-icon,
@@ -51,6 +53,26 @@ label.panel-block:hover .panel-icon {
 
 .panel-icon {
   font-size: 1em;
+}
+
+.social-buttons {
+  text-align: center;
+}
+
+.social-buttons a {
+  color: #fff;
+
+  margin-left: 1em;
+}
+
+.social-buttons a:first-child {
+  margin-left: 0em;
+}
+
+.social-button svg {
+  height: 1.5em;
+
+  display: inline-block;
 }
 
 /* Footer */

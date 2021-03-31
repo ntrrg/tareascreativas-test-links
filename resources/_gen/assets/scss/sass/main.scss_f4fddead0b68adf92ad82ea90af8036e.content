@@ -167,7 +167,7 @@ th {
     text-align: inherit; }
 
 html {
-  background-color: #fff;
+  background-color: #000;
   font-size: 20px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -816,11 +816,11 @@ table th {
   margin-bottom: 1em; }
 
 .site-image img {
-  width: 15em;
+  width: 10em;
   max-width: 80vw; }
 
 .panel {
-  border-radius: 0px;
+  border-radius: 0.25em;
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
   font-size: 1rem; }
   .panel:not(:last-child) {
@@ -898,11 +898,11 @@ table th {
 
 .panel-tabs:not(:last-child),
 .panel-block:not(:last-child) {
-  border-bottom: 0.25em solid #ededed; }
+  border-bottom: none; }
 
 .panel-heading {
   background-color: #ededed;
-  border-radius: 0px 0px 0 0;
+  border-radius: 0.25em 0.25em 0 0;
   color: #363636;
   font-size: 1.25em;
   font-weight: 700;
@@ -947,8 +947,8 @@ table th {
     .panel-block.is-active .panel-icon {
       color: #3273dc; }
   .panel-block:last-child {
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px; }
+    border-bottom-left-radius: 0.25em;
+    border-bottom-right-radius: 0.25em; }
 
 a.panel-block,
 label.panel-block {
@@ -1288,13 +1288,14 @@ label.panel-block {
 
 .panel {
   max-width: 50ex;
-  background-color: #00b6bf;
   color: #fff;
   margin-right: auto;
   margin-left: auto; }
 
 .panel-block {
-  word-break: break-word; }
+  border-radius: 0.25em;
+  word-break: break-word;
+  margin-bottom: 0.25em; }
 
 a.panel-block:hover .panel-icon,
 label.panel-block:hover .panel-icon {
@@ -1302,6 +1303,20 @@ label.panel-block:hover .panel-icon {
 
 .panel-icon {
   font-size: 1em; }
+
+.social-buttons {
+  text-align: center; }
+
+.social-buttons a {
+  color: #fff;
+  margin-left: 1em; }
+
+.social-buttons a:first-child {
+  margin-left: 0em; }
+
+.social-button svg {
+  height: 1.5em;
+  display: inline-block; }
 
 /* Footer */
 .footer {
